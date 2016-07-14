@@ -12,14 +12,23 @@ var config = {
 	units: 'metric',
 
 	modules: [
-		{
+	
+// " Alert {{{ 
+  {
 			module: 'alert',
 		},
+// " }}}
+
+// " Clock {{{
 		{
 			module: 'clock',
 			position: 'top_left'
 		},
-		{
+
+// }}}
+
+// " Calendar {{{
+    {
 			module: 'calendar',
 			header: 'US Holidays',
 			position: 'top_left',
@@ -32,29 +41,38 @@ var config = {
 				]
 			}
 		},
-		{
-			module: 'compliments',
-			position: 'lower_third'
-		},
+// " }}}
+
+// " Current Weather {{{
 		{
 			module: 'currentweather',
 			position: 'top_right',
 			config: {
-				location: 'New York',
-				locationID: '',  //ID from bulk.openweather.org/sample/
-				appid: 'YOUR_OPENWEATHER_API_KEY'
-			}
+				location: 'La Canada Flintridge',
+				locationID: '5363859',  //ID from bulk.openweather.org/sample/
+        appid: '',
+        units: 'imperial',
+        timeFormat: 24
+      }
 		},
+// " }}}
+
+// "Weather Forecast {{{
 		{
 			module: 'weatherforecast',
 			position: 'top_right',
 			header: 'Weather Forecast',
 			config: {
-	            location: 'New York',
-				locationID: '5128581',  //ID from bulk.openweather.org/sample/
-	            appid: 'YOUR_OPENWEATHER_API_KEY'
-			}
+	            location: 'La Canada Flintridge',
+              locationID: '5363859',  //ID from bulk.openweather.org/sample/
+              appid: '',
+              units: 'imperial'
+              
+      }
 		},
+// " }}}
+
+//" Newsfeed {{{
 		{
 			module: 'newsfeed',
 			position: 'bottom_bar',
@@ -69,9 +87,12 @@ var config = {
 				showPublishDate: true
 			}
 		},
+//" }}}
 	]
 
 };
 
 /*************** DO NOT EDIT THE LINE BELOW ***************/
 if (typeof module !== 'undefined') {module.exports = config;}
+
+//" vim: foldmethod=marker
